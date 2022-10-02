@@ -1,3 +1,178 @@
 body {
-    background-color: red;
+    background-color: #ebfcff;
+}
+
+
+.title-div {
+    /* margin: 0 auto; */
+    text-align: center;
+
+
+}
+
+.title-text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    /* line-height: 58px; */
+
+    color: #065A74;
+}
+
+.game-table {
+    width: 600px;
+    height: 544px;
+    margin: 0 auto 13px auto;
+    background-color: #39C2EE;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr;
+    padding: 19px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.game-circle {
+    border-radius: 100%;
+    background-color: #FDFDFD;
+    width: 67px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+    cursor: pointer;
+}
+
+
+.red-circle {
+    border-radius: 100%;
+    background-color: #9A0D0D;
+    width: 67px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+}
+
+
+
+.blue-circle {
+    border-radius: 100%;
+    background-color: #0A7A9D;
+    width: 67px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 7px;
+
+}
+
+
+/* Adding images by class */
+.inner-red-circle {
+    background-image: url('images/Red-Circle.png');
+    background-size: cover;
+}
+
+
+/* Adding images by class */
+.inner-blue-circle {
+    background-image: url('images/Blue-Circle.png');
+    background-size: cover;
+
+}
+
+
+.scoreboard {
+    width: 400px;
+    height: 102px;
+    border-radius: 30px;
+    background-color: #FFD1ED;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    margin: 0 auto;
+
+    /* grid-template-columns: 1fr 1fr; */
+    padding: 10px;
+    display: flex;
+        grid-template-columns: 1fr 1fr;
+}
+
+
+
+
+.scores-div {
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    /* border: 2px solid yellow; */
+}
+
+
+
+.buttons-div {
+    width: 200px;
+    height: 100px;
+    /* border: 2px solid green; */
+    display: grid;  
+}
+
+
+
+
+
+.red-score {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+
+}
+
+.blue-score {
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+
+
+.play-again-btn {
+
+    width: 152px;
+    height: 52px;
+
+    background: #FF0000;
+    border-radius: 30px;
+
+    border: none;
+
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+
+    color: #FFFFFF;
+
+    display: block;
+
+    text-align:center;
+
+
+
+    margin: auto;  
+    cursor: pointer;
+
 }
