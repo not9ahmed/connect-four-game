@@ -388,13 +388,26 @@ const playerPlays = (clickedDivID) => {
 }
 
 
+// function to to disable button
+const disableButton = () => {
+    //Remove the click effect
+    for (let i = 0; i < gameDivs.length; i++) {
+        gameDivs[i].classList.add('disable')
+    }
+}
+
 
 //function to set each gamecircle
 const setGameCircle = (event) => {
 
+    console.log(gameDivs.length)
+
+
 
     //can be a function
     if(gameStop){
+
+        disableButton()
 
         console.log('Game Ended')
         return
@@ -420,6 +433,9 @@ const setGameCircle = (event) => {
 
     //can be a function
     if(gameStop){
+
+        disableButton()
+
         console.log('Game Ended')
         return
     }
@@ -430,6 +446,10 @@ const setGameCircle = (event) => {
 
     //can be a function
     if(gameStop){
+
+        
+        disableButton()
+          
         console.log('Game Ended')
         return
     }
@@ -466,9 +486,10 @@ const resetGameTable = () => {
         }
     }
 
-    for(let i =0; i<42; i++){
+    // i<42
+    for(let i =0; i<gameDivs.length; i++){
         gameDivs[i].className = 'game-circle'
-        // gameDivs[i].classList.remove('inner-blue-circle')
+        gameDivs[i].classList.remove('disable')
     }
 
 
