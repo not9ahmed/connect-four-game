@@ -225,6 +225,8 @@ const checkWinner = (player) => {
 
     }
 
+    playsCount++
+    console.log(playsCount)
 
     //check tie
     if(playsCount === 42){
@@ -232,7 +234,7 @@ const checkWinner = (player) => {
     }
     
     
-    console.log(`The winner is..${winner}`)
+    // console.log(`The winner is..${winner}`)
 }
 
 
@@ -304,9 +306,9 @@ const computerPlays = () => {
     for(let row=5; row>=0; row--){
 
         if(gameTable[row][randomColumn] === ' ' &&
-        (gameTable[row][randomColumn] !== 'X' || gameTable[row][randomColumn] !== 'O')){
+        (gameTable[row][randomColumn] !== 'red' || gameTable[row][randomColumn] !== 'blue')){
         
-            gameTable[row][randomColumn] = 'O'
+            gameTable[row][randomColumn] = 'blue'
 
             // row-5-col-0
             divSelected = `row-${row}-col-${randomColumn}`
@@ -316,7 +318,7 @@ const computerPlays = () => {
         }
     }
 
-    playsCount++
+    // playsCount++
     
     console.log('Computer Plays')
     console.log(gameTable)
@@ -357,9 +359,9 @@ const playerPlays = (clickedDivID) => {
     for(let row=5; row>=0; row--){
 
         if(gameTable[row][col] === ' ' &&
-        (gameTable[row][col] !== 'X' || gameTable[row][col] !== 'O')){
+        (gameTable[row][col] !== 'red' || gameTable[row][col] !== 'blue')){
 
-            gameTable[row][col] = 'X'
+            gameTable[row][col] = 'red'
             
 
             // row-5-col-0
@@ -370,7 +372,7 @@ const playerPlays = (clickedDivID) => {
     }
 
 
-    playsCount++
+    // playsCount++
 
 
     console.log('Player Plays')
