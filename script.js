@@ -7,6 +7,9 @@ console.log(gameDivs[0])
 
 const resetButton = document.querySelector('#play-again-btn')
 
+
+const result = document.querySelector('#result')
+
 let gameTable = [[' ', ' ', ' ', ' ', ' ', ' ', ' '],
                 [' ', ' ', ' ', ' ', ' ', ' ', ' '],
                 [' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -40,6 +43,23 @@ let playsCount = 0
 
 //Function to print our the winner
 const printWinner = () => {
+
+
+    result.classList.remove('hide-winner')
+
+
+    let winnerArr = winner.split('')
+
+    let upperFirst = winnerArr[0].toUpperCase()
+    let restLetters = winnerArr.splice(1).join('')
+
+
+
+    let captializedWord = upperFirst.concat(restLetters)
+    result.innerText = `${captializedWord} Won`
+
+    console.log(result)
+
     console.log(`The winner is ${winner}`)
 }
 
@@ -230,6 +250,14 @@ const checkWinner = (player) => {
 
     //check tie
     if(playsCount === 42){
+
+
+        result.classList.remove('hide-winner')
+        result.innerText = `It is a tie!!`
+    
+    
+        console.log(`It is a tie!!`)
+
         gameStop = true
     }
     
@@ -267,9 +295,6 @@ const insertCircle = (divID, player) => {
 //function to make the computer make a move
 const computerPlays = () => {
 
-
-    //maybe choose a random column and then find the empty row
-    let notEmpty = true
 
     //Variable to store the selected div
     let divSelected
@@ -447,7 +472,7 @@ const setGameCircle = (event) => {
     //can be a function
     if(gameStop){
 
-        
+
         disableButton()
           
         console.log('Game Ended')
@@ -475,6 +500,8 @@ const resetGameTable = () => {
 
     playsCount = 0
 
+    winner = ''
+
     for(let row=0; row<6; row++){
 
         for(let column=0; column<7; column++){
@@ -491,6 +518,9 @@ const resetGameTable = () => {
         gameDivs[i].className = 'game-circle'
         gameDivs[i].classList.remove('disable')
     }
+
+
+    result.classList.add('hide-winner')
 
 
     console.log(gameTable)
