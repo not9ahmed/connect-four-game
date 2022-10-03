@@ -156,6 +156,11 @@ body {
     background: #FF0000;
     border-radius: 30px;
 
+
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
+
+
+
     border: none;
 
 
@@ -170,9 +175,16 @@ body {
 
     text-align:center;
 
-
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.2);
 
     margin: auto;  
     cursor: pointer;
 
 }
+
+
+.disable {
+    cursor: deafult;
+}
+
+

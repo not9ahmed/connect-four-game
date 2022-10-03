@@ -35,6 +35,8 @@ let redWins = 0
 let blueWins = 0
 
 
+let playsCount = 0
+
 
 //Function to print our the winner
 const printWinner = () => {
@@ -56,9 +58,13 @@ const increaseWinsCount = (player) => {
 
     }
 
+}
 
 
-
+const disableDivs = () => {
+    for(let i=0; i<42; i++){
+        divs[i].classList.add('disable')
+    }
 }
 
 
@@ -172,10 +178,6 @@ const checkWinner = (player) => {
                 break;
             }
 
-
-
-
-
         }
     }
 
@@ -223,9 +225,14 @@ const checkWinner = (player) => {
 
     }
 
+
+    //check tie
+    if(playsCount === 42){
+        gameStop = true
+    }
     
     
-    console.log('The winner is..')
+    console.log(`The winner is..${winner}`)
 }
 
 
@@ -309,6 +316,7 @@ const computerPlays = () => {
         }
     }
 
+    playsCount++
     
     console.log('Computer Plays')
     console.log(gameTable)
@@ -362,6 +370,7 @@ const playerPlays = (clickedDivID) => {
     }
 
 
+    playsCount++
 
 
     console.log('Player Plays')
@@ -441,6 +450,8 @@ const setGameTable = () => {
 const resetGameTable = () => {
 
     gameStop = false
+
+    playsCount = 0
 
     for(let row=0; row<6; row++){
 
