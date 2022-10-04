@@ -291,9 +291,86 @@ const insertCircle = (divID, player) => {
 }
 
 
+
+
+//function to make the computer make a move
+const computerPlays = () => {
+
+    //Variable to store the selected div
+    let divSelected
+    
+    
+    
+    let emptyColNotFound = true
+    
+    let randomColumn
+    
+    while(emptyColNotFound){
+        
+        randomColumn = Math.floor(Math.random()*7)
+        
+        //check if the row is empty or not
+        //can be a function
+        for(let row=0; row<6; row++){
+            
+            if(gameTable[row][randomColumn] === ' '){
+                
+                
+                emptyColNotFound = false
+                break
+            }
+        }
+        
+    }
+    
+    console.log(randomColumn)
+    
+    
+    for(let row=5; row>=0; row--){
+        
+        if(gameTable[row][randomColumn] === ' ' &&
+        (gameTable[row][randomColumn] !== 'red' || gameTable[row][randomColumn] !== 'blue')){
+            
+            gameTable[row][randomColumn] = 'blue'
+            
+            // row-5-col-0
+            divSelected = `row-${row}-col-${randomColumn}`
+            
+            break
+            
+        }
+    }
+    
+    
+    console.log('Computer Plays')
+    console.log(gameTable)
+    
+    
+    //insert to the html
+    insertCircle(divSelected, 'blue')
+    
+    // Must end the game
+    checkWinner('blue')
+    
+}
+
+// function to disable the column selected
+const disableColumn = (columnToDisable) => {
+    
+    for(let row = 0; row<6; row++){
+        
+        let divID = `row-${row}-col-${columnToDisable}`
+        
+        let div = document.getElementById(divID)
+        
+        div.classList.add('disable')
+    }
+} 
+
+
 //function to check if the column is not empty
 const checkColumnEmpty = (columnToSearch) => {
-    for(let row=0; row<6; row++){
+    for(let row=5; row>=0; row--){
         if(gameTable[row][columnToSearch] === ' '){
             return true
         }
@@ -303,87 +380,12 @@ const checkColumnEmpty = (columnToSearch) => {
 }
 
 
-//function to make the computer make a move
-const computerPlays = () => {
-
-
-    //Variable to store the selected div
-    let divSelected
-
-
-
-    let emptyColNotFound = true
-
-    let randomColumn
-
-    while(emptyColNotFound){
-
-        randomColumn = Math.floor(Math.random()*7)
-
-        //check if the row is empty or not
-        //can be a function
-        for(let row=0; row<6; row++){
-
-            if(gameTable[row][randomColumn] === ' '){
-
-
-                emptyColNotFound = false
-                break
-            }
-        }
-
-    }
-
-    console.log(randomColumn)
-
-
-    for(let row=5; row>=0; row--){
-
-        if(gameTable[row][randomColumn] === ' ' &&
-        (gameTable[row][randomColumn] !== 'red' || gameTable[row][randomColumn] !== 'blue')){
-        
-            gameTable[row][randomColumn] = 'blue'
-
-            // row-5-col-0
-            divSelected = `row-${row}-col-${randomColumn}`
-
-            break
-        
-        }
-    }
-
-    
-    console.log('Computer Plays')
-    console.log(gameTable)
-
-
-    //insert to the html
-    insertCircle(divSelected, 'blue')
-    
-    // Must end the game
-    checkWinner('blue')
-
-}
-
-// function to disable the column selected
-const disableColumn = (columnToDisable) => {
-    
-    for(let row = 0; row<6; row++){
-        
-        let divID = `row-${row}-col-${columnToDisable}`
-
-        let div = document.getElementById(divID)
-
-        div.classList.add('disable')
-    }
-} 
-
 //function to make the player make a move
 const playerPlays = (clickedDivID) => {
-
-
+    
+    
     // let clickedDiv = document.getElementById(clickedDivID)
-
+    
     console.log(clickedDivID)
     
 

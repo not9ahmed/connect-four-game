@@ -2,6 +2,7 @@ body {
     background-color: #ebfcff;
     background-image: url('images/Background.jpg');
     background-size: cover;
+    background-position: center;
 }
 
 
@@ -19,15 +20,20 @@ body {
     /* line-height: 58px; */
 
     /* color: #065A74; */
-    color: #FFD1ED;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #c4adb7;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.75));
 }
 
 .game-table {
     width: 600px;
     height: 544px;
     margin: 0 auto 13px auto;
-    background-color: #39C2EE;
+    /* background-color: #39C2EE; */
+
+    background: linear-gradient(180deg, rgba(179, 128, 133, 0.7) 0%, rgba(115, 215, 205, 0.35) 120.75%);
+
+
+
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -95,9 +101,7 @@ body {
     /* border: 2px solid red; */
     margin: 0 auto;
     display: flex;
-    /* grid-template-columns: 1fr 1fr; */
     padding: 2px;
-    /* background-color: transparent; */
     filter: none;
 }
 
@@ -105,7 +109,10 @@ body {
     width: 187px;
     height: 102px;
     border-radius: 30px;
-    background-color: #96095D;
+    /* background-color: #29162c; */
+
+    background: rgba(41, 22, 44, 0.7);
+
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin: 0 13px 0 0;
     padding: 10px;
@@ -121,7 +128,7 @@ body {
     font-size: 20px;
     line-height: 24px;
 
-    color: #000000;
+    color: #c4adb7;
 
 }
 
@@ -134,11 +141,15 @@ body {
     width: 400px;
     height: 102px;
     border-radius: 30px;
-    background-color: #FFD1ED;
+    /* background-color: #FFD1ED; */
+    /* background-color: #c4adb7; */
+
+
+    background: rgba(196, 173, 183, 0.7);
+
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     margin: 0 auto;
 
-    /* grid-template-columns: 1fr 1fr; */
     padding: 10px;
     display: flex;
     grid-template-columns: 1fr 1fr;
@@ -175,7 +186,7 @@ body {
     font-size: 20px;
     line-height: 24px;
 
-    color: #000000;
+    color: #29162c;
 
 }
 
@@ -187,7 +198,8 @@ body {
     font-size: 20px;
     line-height: 24px;
 
-    color: #000000;
+    /* color: #000000; */
+    color: #29162c;
 }
 
 
