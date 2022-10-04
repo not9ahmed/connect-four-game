@@ -41,6 +41,8 @@ let blueWins = 0
 let playsCount = 0
 
 
+let playerColumnEmpty = true
+
 //Function to print our the winner
 const printWinner = () => {
 
@@ -289,6 +291,18 @@ const insertCircle = (divID, player) => {
 }
 
 
+//function to check if the column is not empty
+const checkColumnEmpty = (columnToSearch) => {
+    for(let row=0; row<6; row++){
+        if(gameTable[row][columnToSearch] === ' '){
+            return true
+        }
+    }
+
+    return false
+}
+
+
 //function to make the computer make a move
 const computerPlays = () => {
 
@@ -351,6 +365,18 @@ const computerPlays = () => {
 
 }
 
+// function to disable the column selected
+const disableColumn = (columnToDisable) => {
+    
+    for(let row = 0; row<6; row++){
+        
+        let divID = `row-${row}-col-${columnToDisable}`
+
+        let div = document.getElementById(divID)
+
+        div.classList.add('disable')
+    }
+} 
 
 //function to make the player make a move
 const playerPlays = (clickedDivID) => {
@@ -374,7 +400,25 @@ const playerPlays = (clickedDivID) => {
     let divSelected
 
 
+
+    let columnEmpty = checkColumnEmpty(col)
+
+    if(columnEmpty === false){
+
+
+        //
+        disableColumn(col)
+
+
+        //return that the column is not empty
+        return columnEmpty
+    }
+
+
+    console.log(columnEmpty)
+
     //It must find an empty column
+    // Mark the choosen place in  the gameTable Matrix
     for(let row=5; row>=0; row--){
 
         if(gameTable[row][col] === ' ' &&
@@ -404,16 +448,21 @@ const playerPlays = (clickedDivID) => {
 
     // Must check the game end the game
     checkWinner('red')
+
+
+
 }
 
 
-// function to to disable button
+// function to to disable game/circle
 const disableButton = () => {
     //Remove the click effect
     for (let i = 0; i < gameDivs.length; i++) {
         gameDivs[i].classList.add('disable')
     }
 }
+
+
 
 
 //function to set each gamecircle
@@ -443,8 +492,13 @@ const setGameCircle = (event) => {
     }
 
 
-    //make player play
-    playerPlays(clickedDivID)
+    //make player play and if the column is not empty then don't allow him to play
+    let playerColumnEmpty = playerPlays(clickedDivID)
+
+    if(playerColumnEmpty === false){
+
+        return
+    }
 
 
     //can be a function
@@ -486,6 +540,8 @@ const setGameTable = () => {
 
 
 const resetGameTable = () => {
+
+    playerColumnEmpty = true
 
     gameStop = false
 
