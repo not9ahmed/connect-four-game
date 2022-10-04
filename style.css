@@ -72,14 +72,14 @@ body {
 
 
 /* Adding images by class */
-.inner-red-circle {
+.red-circle-img {
     background-image: url('images/Red-Circle.png');
     background-size: cover;
 }
 
 
 /* Adding images by class */
-.inner-blue-circle {
+.blue-circle-img {
     background-image: url('images/Blue-Circle.png');
     background-size: cover;
 
@@ -91,7 +91,7 @@ body {
     /* border: 2px solid red; */
     margin: 0 auto;
     display: flex;
-    grid-template-columns: 1fr 1fr;
+    /* grid-template-columns: 1fr 1fr; */
     padding: 2px;
     background-color: transparent;
 }

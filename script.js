@@ -223,13 +223,9 @@ const checkWinner = (player) => {
             && gameTable[secondRow][secondColumn] === gameTable[thirdRow][thirdColumn] && gameTable[thirdRow][thirdColumn] === gameTable[fourthRow][fourthColumn]){
                 
 
-
                 console.log("Anti Diagonal Line")
                 
-                //   console.log(`${gameTable[row][column]} Won`)
-                
-                
-                //no need I think
+
                 winner = gameTable[row][column]
                 
                 printWinner()
@@ -245,6 +241,7 @@ const checkWinner = (player) => {
 
     }
 
+    //increase the plays count
     playsCount++
     console.log(playsCount)
 
@@ -281,9 +278,9 @@ const insertCircle = (divID, player) => {
     console.log(divToBeInserted)
 
     if(player === 'red'){
-        divToBeInserted.classList.add('inner-red-circle')
+        divToBeInserted.classList.add('red-circle-img')
     } else {
-        divToBeInserted.classList.add('inner-blue-circle')
+        divToBeInserted.classList.add('blue-circle-img')
     }
 
 
@@ -299,8 +296,6 @@ const computerPlays = () => {
     //Variable to store the selected div
     let divSelected
 
-    //I have to check that the column not empty
-    // let randomColumn = Math.floor(Math.random()*7)
 
 
     let emptyColNotFound = true
@@ -343,7 +338,6 @@ const computerPlays = () => {
         }
     }
 
-    // playsCount++
     
     console.log('Computer Plays')
     console.log(gameTable)
@@ -362,7 +356,7 @@ const computerPlays = () => {
 const playerPlays = (clickedDivID) => {
 
 
-    let clickedDiv = document.getElementById(clickedDivID)
+    // let clickedDiv = document.getElementById(clickedDivID)
 
     console.log(clickedDivID)
     
@@ -424,9 +418,6 @@ const disableButton = () => {
 
 //function to set each gamecircle
 const setGameCircle = (event) => {
-
-    console.log(gameDivs.length)
-
 
 
     //can be a function
