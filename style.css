@@ -86,6 +86,7 @@ body {
 .red-circle-img {
     background-image: url('images/Red-Circle.png');
     background-size: cover;
+    cursor: default;
 }
 
 
@@ -93,7 +94,7 @@ body {
 .blue-circle-img {
     background-image: url('images/Blue-Circle.png');
     background-size: cover;
-
+    cursor: default;
 }
 
 .container {
