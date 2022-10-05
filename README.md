@@ -42,37 +42,3 @@ I have found the project simpler after finishing from Tic-Tac-Toe since it helpe
 2. [W3Schools Website](https://www.w3schools.com)
 3. [Connect Four Game Website](https://www.mathsisfun.com/games/connect4.html)
 <br>
-
----
-## HTML Structure
-
-### `title-div`
-The title is mapped into a div called `title-div` this was made to easily center the game title. Then, inside that div it includes an `h1` tag which the title text is in. The title for the game is **Connect Four Game**.  
-<br>
-
-
-### `game-table`  and  `game-circle` 
-For the connect four table it was mapped to a div called `game-table`, then inside that div is a number of circle blocks with the class `game-circle` that will represent each possible position that the players can play. The game circles are the white circle inside the `game-table` div. In addition, each circle has an `id` that represents the corresponding position in terms of a matrix, so for example the first `game-circle` div has an `id` of `row-0-col-1` that corresponds the position in a matrix as `gameTable[0][1]`. The rationale for this is to simplify the DOM manipulation in JavaScript by extracting the circle id and map it easily to a variable called `gameTable` and this variable is a matrix that will map the player positions.  
-<br>
-
-
-### `container`
-The following div contains multiple divs, the first div has an id of `result` and it contains the winner message and by default is set as hidden, so that later on once the winner was found it will be unhidden and will show who won.
-
-Also, inside of that container is div with class of `score-board` which has all the information releated to the number of red wins and blue wins. After each win, the score for the winner player will get updated. If the browser page got refreshed, then the scores will be restarted to 0 for both player.
-
-Lastly, there is a div for the buttons which has a class of `buttons-div` and inside that div is a button with the class of `play-again-btn` that allows the game to be restarted.
-
-
----
-
-## JavaScript Structure
-<br>
- 
-
-### Variables Declared
-`gameTable` 
-<br>
-
-
-### Functions Declared
